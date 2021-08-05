@@ -35,6 +35,19 @@ class HomeController extends GetxController {
     });
   }
 
+  Future<void> sendcmd(String cmd) async {
+    if (connected == true) {
+      channel!.sink.add(cmd);
+    } else {
+      channelconnect();
+      print('Websocket not connect');
+    }
+  }
+
+  void buttonPress() {
+    sendcmd('poweron');
+  }
+
   channelconnect() {
     //function to connect
     try {

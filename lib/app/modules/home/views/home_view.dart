@@ -14,9 +14,13 @@ class HomeView extends GetView<HomeController> {
         centerTitle: true,
       ),
       body: Center(
-        child: Text(
-          'HomeViewg',
-          style: TextStyle(fontSize: 20),
+        child: TextButton(
+          child: Text(
+            "Nhan",
+          ),
+          onPressed: () {
+            controller.buttonPress();
+          },
         ),
       ),
     );
